@@ -1,0 +1,41 @@
+0  import java.io.BufferedWriter;
+0  import java.io.File;
+0  import java.io.FileWriter;
+0  import java.io.IOException;
+0  import java.util.Scanner;
+0  import java.util.Scanner;
+0  public class Squeeze {
+0  public class Squeeze {
+1  public Squeeze() {
+0  public Squeeze() {
+1  }
+0  }
+1  public static void readWriteFile() {
+2  try {
+3  Scanner reader = new Scanner(new File("src\\squeeze.java"));
+3  BufferedWriter writer = new BufferedWriter(new FileWriter("Output.TXT"));
+3  String line, temp = "", result = "";
+0  String line, temp = "", result = "";
+3  while (reader.hasNext()) {
+4  int counter = 0;
+4  line = reader.nextLine();
+4  for (int i = 0; i < line.length(); i++) {
+5  if (Character.isWhitespace(line.charAt(i))) {
+6  counter++;
+5  } else {
+6  temp = line.substring(i);
+6  break;
+5  }
+4  }
+4  result = counter + "  " + temp;
+4  System.out.println(result);
+4  writer.write(result);
+4  writer.newLine();
+3  }
+3  writer.close();
+3  reader.close();
+2  } catch (IOException e) {
+3  System.out.println("File error" + e);
+2  }
+1  }
+0  }
